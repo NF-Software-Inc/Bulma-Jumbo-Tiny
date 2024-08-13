@@ -187,5 +187,14 @@
         #{$property}-top: $value !important
         #{$property}-bottom: $value !important
 
-+typography-size-tiny()
-+typography-size-jumbo()
+@media screen
+  +typography-size-tiny($sizes-tiny)
+  +typography-size($sizes-tiny, 'tiny')
+  +typography-size-jumbo($sizes-jumbo)
+  +typography-size($sizes-jumbo, 'jumbo')
+
+@media print
+  +typography-size-tiny($prints-tiny)
+  +typography-size($prints-tiny, 'tiny-print')
+  +typography-size-jumbo($prints-jumbo)
+  +typography-size($prints-jumbo, 'jumbo-print')
