@@ -187,6 +187,44 @@
         #{$property}-top: $value !important
         #{$property}-bottom: $value !important
 
+@each $property, $shortcut in $border-shortcuts
+  @each $name, $value in $border-values-tiny
+    // All directions
+    .#{$shortcut}-#{$name}-tiny
+      #{$property}-width: $value !important
+    // Cardinal directions
+    @each $direction, $suffix in $border-directions
+      .#{$shortcut}#{$suffix}-#{$name}-tiny
+        #{$property}-#{$direction}-width: $value !important
+    // Horizontal axis
+    @if $border-horizontal != null
+      .#{$shortcut}#{$border-horizontal}-#{$name}-tiny
+        #{$property}-left-width: $value !important
+        #{$property}-right-width: $value !important
+    // Vertical axis
+    @if $border-vertical != null
+      .#{$shortcut}#{$border-vertical}-#{$name}-tiny
+        #{$property}-top-width: $value !important
+        #{$property}-bottom-width: $value !important
+  @each $name, $value in $border-values-jumbo
+    // All directions
+    .#{$shortcut}-#{$name}-jumbo
+      #{$property}-width: $value !important
+    // Cardinal directions
+    @each $direction, $suffix in $border-directions
+      .#{$shortcut}#{$suffix}-#{$name}-jumbo
+        #{$property}-#{$direction}-width: $value !important
+    // Horizontal axis
+    @if $border-horizontal != null
+      .#{$shortcut}#{$border-horizontal}-#{$name}-jumbo
+        #{$property}-left-width: $value !important
+        #{$property}-right-width: $value !important
+    // Vertical axis
+    @if $border-vertical != null
+      .#{$shortcut}#{$border-vertical}-#{$name}-jumbo
+        #{$property}-top-width: $value !important
+        #{$property}-bottom-width: $value !important
+
 @media screen
   +typography-size-tiny($sizes-tiny)
   +typography-size($sizes-tiny, 'tiny')
