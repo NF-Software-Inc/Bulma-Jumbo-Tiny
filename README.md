@@ -1,6 +1,6 @@
 # Bulma Jumbo Tiny
 
-[![MIT](https://img.shields.io/github/license/thirstyape/Bulma-Jumbo-Tiny)](https://github.com/thirstyape/Bulma-Jumbo-Tiny/blob/master/LICENSE)
+[![MIT](https://img.shields.io/github/license/NF-Software-Inc/Bulma-Jumbo-Tiny)](https://github.com/NF-Software-Inc/Bulma-Jumbo-Tiny/blob/master/LICENSE)
 
 This library is an extension to the [Bulma CSS Framework](https://bulma.io). 
 
