@@ -30,16 +30,22 @@
   font-size: $size-jumbo
 
 // Helpers
-=typography-size-tiny($target:'')
-  @each $size in $sizes-tiny
-    $i: index($sizes-tiny, $size)
+=typography-size-tiny($sizes, $target:'')
+  @each $size in $sizes
+    $i: index($sizes, $size)
     .is-size-#{$i}#{if($target == '', '', '-' + $target)}
       &.is-tiny
         font-size: $size !important
 
-=typography-size-jumbo($target:'')
-  @each $size in $sizes-jumbo
-    $i: index($sizes-jumbo, $size)
+=typography-size-jumbo($sizes, $target:'')
+  @each $size in $sizes
+    $i: index($sizes, $size)
     .is-size-#{$i}#{if($target == '', '', '-' + $target)}
       &.is-jumbo
         font-size: $size !important
+
+=typography-size($sizes, $target:'')
+  @each $size in $sizes
+    $i: index($sizes, $size)
+    .is-size-#{$i}#{if($target == '', '', '-' + $target)}
+      font-size: $size !important
