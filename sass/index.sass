@@ -14,25 +14,34 @@
     font-size: $size-tiny
   &.is-jumbo
     font-size: $size-jumbo
-
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      font-size: $size-tiny
+    &.is-jumbo-#{$breakpoint}
+      font-size: $size-jumbo
 // Elements
 .button
   &.is-tiny
     +button-tiny
   &.is-jumbo
     +button-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      +button-tiny
+    &.is-jumbo-#{$breakpoint}
+      +button-jumbo
 
 .buttons
   &.are-tiny
     .button:not(.is-small):not(.is-normal):not(.is-medium):not(.is-large):not(.is-jumbo)
-      +button-tiny
+    +button-tiny
   &.are-small
     .button:not(.is-tiny):not(.is-normal):not(.is-medium):not(.is-large):not(.is-jumbo)
       +button-small
   &.are-medium
     .button:not(.is-tiny):not(.is-small):not(.is-normal):not(.is-large):not(.is-jumbo)
       +button-medium
-  &.are-large
+  &.are-larges
     .button:not(.is-tiny):not(.is-small):not(.is-normal):not(.is-medium):not(.is-jumbo)
       +button-large
   &.are-jumbo
@@ -54,6 +63,21 @@
     min-height: 60px
     min-width: 60px
     width: 60px
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      height: 11px
+      max-height: 11px
+      max-width: 11px
+      min-height: 11px
+      min-width: 11px
+      width: 11px
+    &.is-jumbo-#{$breakpoint}
+      height: 60px
+      max-height: 60px
+      max-width: 60px
+      min-height: 60px
+      min-width: 60px
+      width: 60px
 
 .icon
   &.is-tiny
@@ -62,12 +86,24 @@
   &.is-jumbo
     height: $icon-dimensions-jumbo
     width: $icon-dimensions-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      height: $icon-dimensions-tiny
+      width: $icon-dimensions-tiny
+    &.is-jumbo-#{$breakpoint}
+      height: $icon-dimensions-jumbo
+      width: $icon-dimensions-jumbo
 
 .progress
   &.is-tiny
     height: $size-tiny
   &.is-jumbo
     height: $size-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      height: $size-tiny
+    &.is-jumbo-#{$breakpoint}
+      height: $size-jumbo
 
 .title,
 .subtitle
@@ -81,6 +117,17 @@
       $i: index($sizes-jumbo, $size)
       &.is-#{$i}
         font-size: $size
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      @each $size in $sizes-tiny
+        $i: index($sizes-tiny, $size)
+        &.is-#{$i}
+          font-size: $size
+    &.is-jumbo-#{$breakpoint}
+      @each $size in $sizes-jumbo
+        $i: index($sizes-jumbo, $size)
+        &.is-#{$i}
+          font-size: $size
 
 .tags
   &.are-tiny
@@ -104,10 +151,18 @@
     +control-tiny
   &.is-jumbo
     +control-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}
+      +control-tiny
+    &.is-jumbo-#{$breakpoint}
+      +control-jumbo
 
 .input
   &.is-jumbo
     border-radius: $radius-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-jumbo-#{$breakpoint}
+      border-radius: $radius-jumbo
 
 .select
   &.is-loading
@@ -115,6 +170,11 @@
       font-size: $size-tiny
     &.is-jumbo:after
       font-size: $size-jumbo
+    @each $breakpoint, $key in $breakpoints
+      &.is-tiny-#{$breakpoint}:after
+        font-size: $size-tiny
+      &.is-jumbo-#{$breakpoint}:after
+        font-size: $size-jumbo
 
 .control
   &.has-icons-left,
@@ -125,21 +185,38 @@
         font-size: $size-tiny
       &.is-jumbo ~ .icon
         font-size: $size-jumbo
+      @each $breakpoint, $key in $breakpoints
+        &.is-tiny-#{$breakpoint} ~ .icon
+          font-size: $size-tiny
+        &.is-jumbo-#{$breakpoint} ~ .icon
+          font-size: $size-jumbo
+
   &.is-loading
     &.is-tiny:after
       font-size: $size-tiny
     &.is-jumbo:after
       font-size: $size-jumbo
+    @each $breakpoint, $key in $breakpoints
+      &.is-tiny-#{$breakpoint}:after
+        font-size: $size-tiny
+      &.is-jumbo-#{$breakpoint}:after
+        font-size: $size-jumbo
 
 // Layout
 .hero
   &.is-tiny
     .hero-body
       padding: $hero-body-padding-tiny
+
   &.is-jumbo
     +tablet
       .hero-body
         padding: $hero-body-padding-jumbo
+  @each $breakpoint, $key in $breakpoints
+    &.is-tiny-#{$breakpoint}:after
+      font-size: $size-tiny
+    &.is-jumbo-#{$breakpoint}:after
+      font-size: $size-jumbo
 
 .section
   +desktop
