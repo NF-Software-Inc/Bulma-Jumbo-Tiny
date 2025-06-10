@@ -1,0 +1,239 @@
+@import 'mixins'
+@import 'variables'
+
+=index-template($suffix)
+    $suffix_dash: if($suffix == '', '', '-' + $suffix)
+    // Shared
+    .tag:not(body),
+    .label,
+    .file,
+    .breadcrumb,
+    .menu,
+    .message,
+    .pagination,
+    .tabs
+      &.is-tiny#{$suffix_dash}
+        font-size: $size-tiny
+      &.is-jumbo#{$suffix_dash}
+        font-size: $size-jumbo
+
+    // Elements
+    .button
+      &.is-tiny#{$suffix_dash}
+        +button-tiny
+      &.is-jumbo#{$suffix_dash}
+        +button-jumbo
+
+    .buttons
+        &.are-tiny#{$suffix_dash}
+            .button:not(.is-small):not(.is-normal):not(.is-medium):not(.is-large):not(.is-jumbo)
+                +button-tiny
+        &.are-small
+            .button:not(.is-tiny):not(.is-normal):not(.is-medium):not(.is-large):not(.is-jumbo)
+                +button-small
+        &.are-medium
+            .button:not(.is-tiny):not(.is-small):not(.is-normal):not(.is-large):not(.is-jumbo)
+                +button-medium
+        &.are-large
+            .button:not(.is-tiny):not(.is-small):not(.is-normal):not(.is-medium):not(.is-jumbo)
+                +button-large
+        &.are-jumbo#{$suffix_dash}
+            .button:not(.is-tiny):not(.is-small):not(.is-normal):not(.is-medium):not(.is-large)
+                +button-jumbo
+
+    .delete
+      &.is-tiny#{$suffix_dash}
+        height: 11px
+        max-height: 11px
+        max-width: 11px
+        min-height: 11px
+        min-width: 11px
+        width: 11px
+      &.is-jumbo#{$suffix_dash}
+        height: 60px
+        max-height: 60px
+        max-width: 60px
+        min-height: 60px
+        min-width: 60px
+        width: 60px
+
+    .icon
+      &.is-tiny#{$suffix_dash}
+        height: $icon-dimensions-tiny
+        width: $icon-dimensions-tiny
+      &.is-jumbo#{$suffix_dash}
+        height: $icon-dimensions-jumbo
+        width: $icon-dimensions-jumbo
+
+    .progress
+      &.is-tiny#{$suffix_dash}
+        height: $size-tiny
+      &.is-jumbo#{$suffix_dash}
+        height: $size-jumbo
+
+    .title,
+    .subtitle
+      &.is-tiny#{$suffix_dash}
+        @each $size in $sizes-tiny
+          $i: index($sizes-tiny, $size)
+          &.is-#{$i}
+            font-size: $size
+      &.is-jumbo#{$suffix_dash}
+        @each $size in $sizes-jumbo
+          $i: index($sizes-jumbo, $size)
+          &.is-#{$i}
+            font-size: $size
+    .tags
+        &.are-tiny#{$suffix_dash}
+            .tag:not(.is-normal):not(.is-medium):not(.is-large):not(.is-jumbo)
+                font-size: $size-tiny
+        &.are-medium
+            .tag:not(.is-tiny):not(.is-normal):not(.is-large):not(.is-jumbo)
+                font-size: $size-normal
+        &.are-large
+            .tag:not(.is-tiny):not(.is-normal):not(.is-medium):not(.is-jumbo)
+                font-size: $size-medium
+        &.are-jumbo#{$suffix_dash}
+            .tag:not(.is-tiny):not(.is-normal):not(.is-medium):not(.is-large)
+                font-size: $size-jumbo
+
+    // Form
+    .input,
+    .select,
+    .textarea
+      &.is-tiny#{$suffix_dash}
+        +control-tiny
+      &.is-jumbo#{$suffix_dash}
+        +control-jumbo
+
+    .input
+      &.is-jumbo#{$suffix_dash}
+        border-radius: $radius-jumbo
+
+    .select
+      &.is-loading
+        &.is-tiny#{$suffix_dash}:after
+          font-size: $size-tiny
+        &.is-jumbo#{$suffix_dash}:after
+          font-size: $size-jumbo
+
+    .control
+      &.has-icons-left,
+      &.has-icons-right
+        .input,
+        .select
+          &.is-tiny#{$suffix_dash} ~ .icon
+            font-size: $size-tiny
+          &.is-jumbo#{$suffix_dash} ~ .icon
+            font-size: $size-jumbo
+      &.is-loading
+        &.is-tiny#{$suffix_dash}:after
+          font-size: $size-tiny
+        &.is-jumbo#{$suffix_dash}:after
+          font-size: $size-jumbo
+
+    // Layout
+    .hero
+      &.is-tiny#{$suffix_dash}
+        .hero-body
+          padding: $hero-body-padding-tiny
+      &.is-jumbo#{$suffix_dash}
+        +tablet
+          .hero-body
+            padding: $hero-body-padding-jumbo
+
+    .section
+      +desktop
+        &.is-tiny#{$suffix_dash}
+          padding: $section-padding-tiny
+        &.is-jumbo#{$suffix_dash}
+          padding: $section-padding-jumbo
+
+    // Helpers
+    @each $property, $shortcut in $spacing-shortcuts
+      @each $name, $value in $spacing-values-tiny
+        // All directions
+        .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
+          #{$property}: $value !important
+        // Cardinal directions
+        @each $direction, $suffix in $spacing-directions
+          .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-#{$direction}: $value !important
+        // Horizontal axis
+        @if $spacing-horizontal != null
+          .#{$shortcut}#{$spacing-horizontal}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-left: $value !important
+            #{$property}-right: $value !important
+        // Vertical axis
+        @if $spacing-vertical != null
+          .#{$shortcut}#{$spacing-vertical}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-top: $value !important
+            #{$property}-bottom: $value !important
+      @each $name, $value in $spacing-values-jumbo
+        // All directions
+        .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
+          #{$property}: $value !important
+        // Cardinal directions
+        @each $direction, $suffix in $spacing-directions
+          .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-#{$direction}: $value !important
+        // Horizontal axis
+        @if $spacing-horizontal != null
+          .#{$shortcut}#{$spacing-horizontal}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-left: $value !important
+            #{$property}-right: $value !important
+        // Vertical axis
+        @if $spacing-vertical != null
+          .#{$shortcut}#{$spacing-vertical}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-top: $value !important
+            #{$property}-bottom: $value !important
+
+    @each $property, $shortcut in $border-shortcuts
+      @each $name, $value in $border-values-tiny
+        // All directions
+        .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
+          #{$property}-width: $value !important
+        // Cardinal directions
+        @each $direction, $suffix in $border-directions
+          .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-#{$direction}-width: $value !important
+        // Horizontal axis
+        @if $border-horizontal != null
+          .#{$shortcut}#{$border-horizontal}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-left-width: $value !important
+            #{$property}-right-width: $value !important
+        // Vertical axis
+        @if $border-vertical != null
+          .#{$shortcut}#{$border-vertical}-#{$name}-tiny#{$suffix_dash}
+            #{$property}-top-width: $value !important
+            #{$property}-bottom-width: $value !important
+      @each $name, $value in $border-values-jumbo
+        // All directions
+        .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
+          #{$property}-width: $value !important
+        // Cardinal directions
+        @each $direction, $suffix in $border-directions
+          .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-#{$direction}-width: $value !important
+        // Horizontal axis
+        @if $border-horizontal != null
+          .#{$shortcut}#{$border-horizontal}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-left-width: $value !important
+            #{$property}-right-width: $value !important
+        // Vertical axis
+        @if $border-vertical != null
+          .#{$shortcut}#{$border-vertical}-#{$name}-jumbo#{$suffix_dash}
+            #{$property}-top-width: $value !important
+            #{$property}-bottom-width: $value !important
+
+    @media screen
+      +typography-size-tiny($sizes-tiny, $suffix)
+      +typography-size($sizes-tiny, 'tiny#{$suffix_dash}')
+      +typography-size-jumbo($sizes-jumbo, $suffix)
+      +typography-size($sizes-jumbo, 'jumbo#{$suffix_dash}')
+
+    @media print
+      +typography-size-tiny($prints-tiny, $suffix)
+      +typography-size($prints-tiny, 'tiny#{$suffix_dash}-print')
+      +typography-size-jumbo($prints-jumbo, $suffix)
+      +typography-size($prints-jumbo, 'jumbo#{$suffix_dash}-print')
