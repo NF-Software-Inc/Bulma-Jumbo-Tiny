@@ -138,16 +138,18 @@
         .hero-body
           padding: $hero-body-padding-tiny
       &.is-jumbo#{$suffix_dash}
-        +tablet
-          .hero-body
-            padding: $hero-body-padding-jumbo
+        @if $suffix == ""
+          +tablet
+            .hero-body
+              padding: $hero-body-padding-jumbo
 
     .section
-      +desktop
-        &.is-tiny#{$suffix_dash}
-          padding: $section-padding-tiny
-        &.is-jumbo#{$suffix_dash}
-          padding: $section-padding-jumbo
+      @if $suffix == ""
+        +desktop
+          &.is-tiny#{$suffix_dash}
+            padding: $section-padding-tiny
+          &.is-jumbo#{$suffix_dash}
+            padding: $section-padding-jumbo
 
     // Helpers
     @each $property, $shortcut in $spacing-shortcuts

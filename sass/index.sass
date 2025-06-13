@@ -7,6 +7,8 @@
 
 +index-template("")
 
-@each $breakpoint, $key in $breakpoints
-	+breakpoint($breakpoint)
-		+index-template($breakpoint)
+$all-breakpoint-keys: map-keys($breakpoints)
+
+@each $breakpoint in $all-breakpoint-keys
+    +breakpoint($breakpoint)
+        +index-template($breakpoint)
