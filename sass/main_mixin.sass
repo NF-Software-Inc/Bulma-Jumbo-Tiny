@@ -152,81 +152,82 @@
             padding: $section-padding-jumbo
 
     // Helpers
-    @each $property, $shortcut in $spacing-shortcuts
-      @each $name, $value in $spacing-values-tiny
-        // All directions
-        .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
-          #{$property}: $value !important
-        // Cardinal directions
-        @each $direction, $suffix in $spacing-directions
-          .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-#{$direction}: $value !important
-        // Horizontal axis
-        @if $spacing-horizontal != null
-          .#{$shortcut}#{$spacing-horizontal}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-left: $value !important
-            #{$property}-right: $value !important
-        // Vertical axis
-        @if $spacing-vertical != null
-          .#{$shortcut}#{$spacing-vertical}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-top: $value !important
-            #{$property}-bottom: $value !important
-      @each $name, $value in $spacing-values-jumbo
-        // All directions
-        .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
-          #{$property}: $value !important
-        // Cardinal directions
-        @each $direction, $suffix in $spacing-directions
-          .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-#{$direction}: $value !important
-        // Horizontal axis
-        @if $spacing-horizontal != null
-          .#{$shortcut}#{$spacing-horizontal}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-left: $value !important
-            #{$property}-right: $value !important
-        // Vertical axis
-        @if $spacing-vertical != null
-          .#{$shortcut}#{$spacing-vertical}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-top: $value !important
-            #{$property}-bottom: $value !important
+    @if $suffix == ""
+        @each $property, $shortcut in $spacing-shortcuts
+          @each $name, $value in $spacing-values-tiny
+            // All directions
+            .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
+              #{$property}: $value !important
+            // Cardinal directions
+            @each $direction, $suffix in $spacing-directions
+              .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-#{$direction}: $value !important
+            // Horizontal axis
+            @if $spacing-horizontal != null
+              .#{$shortcut}#{$spacing-horizontal}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-left: $value !important
+                #{$property}-right: $value !important
+            // Vertical axis
+            @if $spacing-vertical != null
+              .#{$shortcut}#{$spacing-vertical}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-top: $value !important
+                #{$property}-bottom: $value !important
+          @each $name, $value in $spacing-values-jumbo
+            // All directions
+            .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
+              #{$property}: $value !important
+            // Cardinal directions
+            @each $direction, $suffix in $spacing-directions
+              .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-#{$direction}: $value !important
+            // Horizontal axis
+            @if $spacing-horizontal != null
+              .#{$shortcut}#{$spacing-horizontal}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-left: $value !important
+                #{$property}-right: $value !important
+            // Vertical axis
+            @if $spacing-vertical != null
+              .#{$shortcut}#{$spacing-vertical}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-top: $value !important
+                #{$property}-bottom: $value !important
 
-    @each $property, $shortcut in $border-shortcuts
-      @each $name, $value in $border-values-tiny
-        // All directions
-        .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
-          #{$property}-width: $value !important
-        // Cardinal directions
-        @each $direction, $suffix in $border-directions
-          .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-#{$direction}-width: $value !important
-        // Horizontal axis
-        @if $border-horizontal != null
-          .#{$shortcut}#{$border-horizontal}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-left-width: $value !important
-            #{$property}-right-width: $value !important
-        // Vertical axis
-        @if $border-vertical != null
-          .#{$shortcut}#{$border-vertical}-#{$name}-tiny#{$suffix_dash}
-            #{$property}-top-width: $value !important
-            #{$property}-bottom-width: $value !important
-      @each $name, $value in $border-values-jumbo
-        // All directions
-        .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
-          #{$property}-width: $value !important
-        // Cardinal directions
-        @each $direction, $suffix in $border-directions
-          .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-#{$direction}-width: $value !important
-        // Horizontal axis
-        @if $border-horizontal != null
-          .#{$shortcut}#{$border-horizontal}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-left-width: $value !important
-            #{$property}-right-width: $value !important
-        // Vertical axis
-        @if $border-vertical != null
-          .#{$shortcut}#{$border-vertical}-#{$name}-jumbo#{$suffix_dash}
-            #{$property}-top-width: $value !important
-            #{$property}-bottom-width: $value !important
+        @each $property, $shortcut in $border-shortcuts
+          @each $name, $value in $border-values-tiny
+            // All directions
+            .#{$shortcut}-#{$name}-tiny#{$suffix_dash}
+              #{$property}-width: $value !important
+            // Cardinal directions
+            @each $direction, $suffix in $border-directions
+              .#{$shortcut}#{$suffix}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-#{$direction}-width: $value !important
+            // Horizontal axis
+            @if $border-horizontal != null
+              .#{$shortcut}#{$border-horizontal}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-left-width: $value !important
+                #{$property}-right-width: $value !important
+            // Vertical axis
+            @if $border-vertical != null
+              .#{$shortcut}#{$border-vertical}-#{$name}-tiny#{$suffix_dash}
+                #{$property}-top-width: $value !important
+                #{$property}-bottom-width: $value !important
+          @each $name, $value in $border-values-jumbo
+            // All directions
+            .#{$shortcut}-#{$name}-jumbo#{$suffix_dash}
+              #{$property}-width: $value !important
+            // Cardinal directions
+            @each $direction, $suffix in $border-directions
+              .#{$shortcut}#{$suffix}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-#{$direction}-width: $value !important
+            // Horizontal axis
+            @if $border-horizontal != null
+              .#{$shortcut}#{$border-horizontal}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-left-width: $value !important
+                #{$property}-right-width: $value !important
+            // Vertical axis
+            @if $border-vertical != null
+              .#{$shortcut}#{$border-vertical}-#{$name}-jumbo#{$suffix_dash}
+                #{$property}-top-width: $value !important
+                #{$property}-bottom-width: $value !important
 
     @media screen
       +typography-size-tiny($sizes-tiny, $suffix)
