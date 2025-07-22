@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <base href=".">
+        <link href="../../css/bulma.min.css" rel="stylesheet">
+        <link href="../../css/bulma-jumbo-tiny.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <title>Responsiveness - Bulma Jumbo Tiny</title>
+    </head>
+
+    <body>
+        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand is-unselectable">
+                <a href="../../../../index.html" class="navbar-item">Bulma Jumbo Tiny</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="demo-navigationmenu">
+                    <span aria-hidden="true"></span>
+		            <span aria-hidden="true"></span>
+		            <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="demo-navigationmenu" class="navbar-menu is-unselectable">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Components</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="../components/breadcrumb.html" class="navbar-item">Breadcrumb</a>
+                            <a href="../components/message.html" class="navbar-item">Message</a>
+                            <a href="../components/pagination.html" class="navbar-item">Pagination</a>
+                            <a href="../components/tabs.html" class="navbar-item">Tabs</a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Elements</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="../elements/button.html" class="navbar-item">Button</a>
+                            <a href="../elements/delete.html" class="navbar-item">Delete</a>
+                            <a href="../elements/progress.html" class="navbar-item">Progress</a>
+                            <a href="../elements/tag.html" class="navbar-item">Tag</a>
+                            <a href="../elements/title.html" class="navbar-item">Title</a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Form</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="../form/file.html" class="navbar-item">File</a>
+                            <a href="../form/input.html" class="navbar-item">Input</a>
+                            <a href="../form/textarea.html" class="navbar-item">Textarea</a>
+                            <a href="../form/select.html" class="navbar-item">Select</a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link is-active">Helpers</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="spacing.html" class="navbar-item">Spacing</a>
+                            <a href="typography.html" class="navbar-item">Typography</a>
+                            <a href="responsiveness.html" class="navbar-item is-active">Responsiveness</a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Layout</a>
+
+                        <div class="navbar-dropdown">
+                            <a href="../layout/hero.html" class="navbar-item">Hero</a>
+                            <a href="../layout/section.html" class="navbar-item">Section</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main role="main" class="is-main-section">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Responsiveness
+                        </h1>
+                        <div class="subtitle is-4">
+                            <p>Bulma is a <strong>mobile-first</strong> framework</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <h3 class="title is-4 is-spaced">Screen Sizes (Breakpoints)</h3>
+            <div class="content">
+                <p>Here are the standard screen sizes Bulma uses:</p>
+            </div>
+            <div class="table-container">
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Class Suffix</th>
+                            <th>Screen Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mobile</td>
+                            <td><code>mobile</code></td>
+                            <td>Up to 768 pixels</td>
+                        </tr>
+                        <tr>
+                            <td>Tablet</td>
+                            <td><code>tablet</code></td>
+                            <td>From 769 to 1023 pixels</td>
+                        </tr>
+                        <tr>
+                            <td>Desktop</td>
+                            <td><code>desktop</code></td>
+                            <td>From 1024 to 1215 pixels</td>
+                        </tr>
+                        <tr>
+                            <td>Widescreen</td>
+                            <td><code>widescreen</code></td>
+                            <td>From 1216 to 1407 pixels</td>
+                        </tr>
+                        <tr>
+                            <td>FullHD</td>
+                            <td><code>fullhd</code></td>
+                            <td>1408 pixels and wider</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content">
+                <p>This table shows how different size settings appear on various screen sizes:</p>
+            </div>
+            <div class="table-container">
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Mobile<br>Up to <code>768px</code></th>
+                            <th style="width: 20%;">Tablet<br>Between <code>769px</code> and <code>1023px</code></th>
+                            <th style="width: 20%;">Desktop<br>Between <code>1024px</code> and <code>1215px</code></th>
+                            <th style="width: 20%;">Widescreen<br>Between <code>1216px</code> and <code>1407px</code></th>
+                            <th style="width: 20%;">FullHD<br><code>1408px</code> and above</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><p class="notification is-primary">mobile</p></td>
+                            <td colspan="4"><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="notification">-</p></td>
+                            <td colspan="4"><p class="notification is-primary">tablet</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="notification">-</p></td>
+                            <td colspan="3"><p class="notification is-primary">desktop</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><p class="notification">-</p></td>
+                            <td colspan="2"><p class="notification is-primary">widescreen</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><p class="notification">-</p></td>
+                            <td><p class="notification is-primary">fullhd</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="notification">-</p></td>
+                            <td><p class="notification is-primary">tablet-only</p></td>
+                            <td colspan="3"><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="notification">-</p></td>
+                            <td><p class="notification is-primary">desktop-only</p></td>
+                            <td colspan="2"><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><p class="notification">-</p></td>
+                            <td><p class="notification is-primary">widescreen-only</p></td>
+                            <td><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="notification is-primary">touch</p></td>
+                            <td colspan="3"><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><p class="notification is-primary">until-widescreen</p></td>
+                            <td colspan="2"><p class="notification">-</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><p class="notification is-primary">until-fullhd</p></td>
+                            <td colspan="1"><p class="notification">-</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="title is-4 is-spaced mt-6">How to Use It</h3>
+            <div class="content">
+                <p>
+                    You can use these <code>tiny</code> and <code>jumbo</code> size controls on many things, like <strong>buttons</strong>, <strong>tags</strong>, <strong>titles</strong>, <strong>icons</strong>, and <strong>form fields</strong>.
+                    You can control the sizing of elements on specific screen sizes by using <code>is-{tiny/jumbo}-{suffix}</code> where suffix is any of the above.
+                </p>
+
+                <h5 class="title is-5">HTML Example with Buttons</h5>
+                <pre><code>&lt;div class="buttons"&gt;
+            &lt;button class="button is-tiny-mobile"&gt;Tiny on Mobile&lt;/button&gt;
+            &lt;button class="button is-tiny-tablet"&gt;Tiny on Tablet+&lt;/button&gt;
+            &lt;button class="button is-tiny-desktop"&gt;Tiny on Desktop+&lt;/button&gt;
+            &lt;button class="button is-tiny-widescreen"&gt;Tiny on Widescreen+&lt;/button&gt;
+            &lt;button class="button is-tiny-fullhd"&gt;Tiny on FullHD+&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="buttons"&gt;
+            &lt;button class="button is-jumbo-mobile"&gt;Jumbo on Mobile&lt;/button&gt;
+            &lt;button class="button is-jumbo-tablet"&gt;Jumbo on Tablet+&lt;/button&gt;
+            &lt;button class="button is-jumbo-desktop"&gt;Jumbo on Desktop+&lt;/button&gt;
+            &lt;button class="button is-jumbo-widescreen"&gt;Jumbo on Widescreen+&lt;/button&gt;
+            &lt;button class="button is-jumbo-fullhd"&gt;Jumbo on FullHD+&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="buttons"&gt;
+            &lt;button class="button is-tiny-tablet-only"&gt;Tiny on Tablet Only&lt;/button&gt;
+            &lt;button class="button is-tiny-desktop-only"&lt;Tiny on Desktop Only&lt;/button&gt;
+            &lt;button class="button is-tiny-widescreen-only"&gt;Tiny on Widescreen Only&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="buttons"&gt;
+            &lt;button class="button is-jumbo-tablet-only"&gt;Jumbo on Tablet Only&lt;/button&gt;
+            &lt;button class="button is-jumbo-desktop-only"&gt;Jumbo on Desktop Only&lt;/button&gt;
+            &lt;button class="button is-jumbo-widescreen-only"&gt;Jumbo on Widescreen Only&lt;/button&gt;
+        &lt;/div&gt;</code></pre>
+
+                <div class="buttons">
+                    <button class="button is-tiny-mobile">Tiny on Mobile</button>
+                    <button class="button is-tiny-tablet">Tiny on Tablet+</button>
+                    <button class="button is-tiny-desktop">Tiny on Desktop+</button>
+                    <button class="button is-tiny-widescreen">Tiny on Widescreen+</button>
+                    <button class="button is-tiny-fullhd">Tiny on FullHD+</button>
+                </div>
+
+                <div class="buttons">
+                    <button class="button is-jumbo-mobile">Jumbo on Mobile</button>
+                    <button class="button is-jumbo-tablet">Jumbo on Tablet+</button>
+                    <button class="button is-jumbo-desktop">Jumbo on Desktop+</button>
+                    <button class="button is-jumbo-widescreen">Jumbo on Widescreen+</button>
+                    <button class="button is-jumbo-fullhd">Jumbo on FullHD+</button>
+                </div>
+                <div class="buttons">
+                    <button class="button is-tiny-tablet-only">Tiny on Tablet Only</button>
+                    <button class="button is-tiny-desktop-only">Tiny on Desktop Only</button>
+                    <button class="button is-tiny-widescreen-only">Tiny on Widescreen Only</button>
+                </div>
+
+                <div class="buttons">
+                    <button class="button is-jumbo-tablet-only">Jumbo on Tablet Only</button>
+                    <button class="button is-jumbo-desktop-only">Jumbo on Desktop Only</button>
+                    <button class="button is-jumbo-widescreen-only">Jumbo on Widescreen Only</button>
+                </div>
+
+                <span class="icon is-tiny-desktop">
+                    <i class="fas fa-home"></i>
+                </span>
+            </div>
+
+            <h3 class="title is-4 is-spaced mt-6">Text Sizing</h3>
+            <div class="content">
+                <p>This extension also lets you control text size in new ways. You can make text:</p>
+                <ul>
+                    <li><strong>Extra small or large</strong> using <code>is-tiny-{size}-{suffix}</code> or <code>is-jumbo-{size}-{suffix}</code> along with Bulma's default text sizes (like <code>is-1</code> for largest to <code>is-7</code> for smallest).</li>
+                    <li>
+                        <strong>Change text size based on screen or for printing:</strong>
+                        <ul>
+                            <li><strong>For screens:</strong> Use classes like <code>is-size-1-tiny-desktop</code> (meaning "tiny size 1 on desktop screens").</li>
+                            <li><strong>For printing:</strong> Use classes like <code>is-size-4-jumbo-print</code> (meaning "jumbo size 4 when printed").</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h5 class="title is-5">HTML Example (Responsive Typography)</h5>
+                <pre>
+                <code>&lt;p class="is-size-7-tiny-mobile"&gt;This text is tiny on mobile.&lt;/p&gt;
+        &lt;p class="is-size-1-jumbo-desktop"&gt;This text is jumbo on desktop.&lt;/p&gt;
+        &lt;p class="is-size-4-tiny-print"&gt;This text is tiny specifically for print.&lt;/p&gt;</code>
+                </pre>
+                <p class="is-size-7-tiny-mobile">This text is tiny on mobile.</p>
+                <p class="is-size-1-jumbo-desktop">This text is jumbo on desktop.</p>
+                <p class="is-size-4-tiny-print">This text is tiny specifically for print.</p>
+            </div>
+        </div>
+        </main>
+    </body>
+</html>
